@@ -12,18 +12,21 @@
         <div>
             <input name="username" id="username" type="text" autocomplete="off">
         </div>
+        <div th:if="${error != null && error.containsKey('username')}" th:text="${error.get('username')}"></div>
     </div>
     <div>
         <label for="password">Password: </label>
         <div>
             <input name="password" id="password" type="password" autocomplete="off">
         </div>
+        <div th:if="${error != null  && error.containsKey('password')}" th:text="${error.get('password')}">
     </div>
     <div>
         <label for="email">Email: </label>
         <div>
             <input name="email" id="email" type="email" autocomplete="off">
         </div>
+        <div th:if="${error != null  && error.containsKey('email')}" th:text="${error.get('email')}">
     </div>
     <div>
         <div>
