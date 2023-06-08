@@ -4,6 +4,10 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class User {
     @NotEmpty
+    private String name;
+    @NotEmpty
+    private String lastname;
+    @NotEmpty
     private String username;
     @NotEmpty
 
@@ -34,5 +38,21 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 }
