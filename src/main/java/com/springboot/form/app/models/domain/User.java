@@ -1,19 +1,23 @@
 package com.springboot.form.app.models.domain;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 public class User {
-    @NotEmpty
+
+    private String id;
+    @NotEmpty(message = "Cannot be null")
     private String name;
-    @NotEmpty
+    @NotEmpty(message = "Cannot be null")
     private String lastname;
-    @NotEmpty
+    @NotEmpty(message = "Cannot be null")
+    @Size(min = 3, max = 8)
     private String username;
-    @NotEmpty
-
+    @NotEmpty(message = "Cannot be null")
     private String password;
-    @NotEmpty
-
+    @NotEmpty(message = "Cannot be null")
+    @Email(message = "Wrong email format")
     private String email;
 
     public String getUsername() {
@@ -54,5 +58,13 @@ public class User {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

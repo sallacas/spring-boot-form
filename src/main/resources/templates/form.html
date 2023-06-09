@@ -8,6 +8,20 @@
 <h1 th:text="${title}"></h1>
 <form th:action="@{/form}" th:object="${user}" method="post">
     <div>
+        <label for="name">Name: </label>
+        <div>
+            <input id="name" type="text" autocomplete="off" th:field="*{name}">
+        </div>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    </div>
+    <div>
+        <label for="lastname">Name: </label>
+        <div>
+            <input id="lastname" type="text" autocomplete="off" th:field="*{lastname}">
+        </div>
+        <div th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></div>
+    </div>
+    <div>
         <label for="username">Username: </label>
         <div>
             <input id="username" type="text" autocomplete="off" th:field="*{username}">
